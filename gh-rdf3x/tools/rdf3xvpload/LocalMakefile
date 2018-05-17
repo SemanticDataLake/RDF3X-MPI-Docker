@@ -1,0 +1,11 @@
+src_tools_rdf3xvpload:=				\
+	tools/rdf3xvpload/rdf3xvpload.cpp		\
+	tools/rdf3xvpload/rdf3xload.cpp		\
+	tools/rdf3xvpload/Sorter.cpp		\
+	tools/rdf3xvpload/StringLookup.cpp	\
+	tools/rdf3xvpload/TempFile.cpp
+
+$(PREFIX)rdf3xvpload$(EXEEXT): $(addprefix $(PREFIX),$(src_tools_rdf3xvpload:.cpp=$(OBJEXT)) $(src_infra:.cpp=$(OBJEXT)) $(src_rts:.cpp=$(OBJEXT)) $(src_cts:.cpp=$(OBJEXT)))
+	$(buildexe)
+
+LIBS-rdf3xquery:=termcap
